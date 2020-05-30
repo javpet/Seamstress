@@ -1,0 +1,132 @@
+@font-face {
+  font-family: "PT Root";
+  src: url(ptroot.woff2);
+}
+
+body {
+  font-family: "PT Root", Arial, sans-serif;
+  font-size: 24px;
+  line-height: 1.5;
+  background-color: black;
+  color: #FFF;
+}
+
+header {
+  position: fixed;
+  top: 8px;
+  left: 0px;
+  width: 100%;
+  overflow: hidden;
+  z-index: 1000000000000;
+  font-size: 16px;
+  font-variation-settings: "wght"800;
+}
+
+header h1, header h2 {
+  display: flex;
+}
+
+h1 span, h2 span {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 150px;
+}
+
+h2 span {
+  width: 250px;
+}
+
+section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  grid-auto-flow: dense;
+}
+
+section div.split {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+section div.split:first-child {
+  background-color: #111111;
+}
+
+section div.slides {
+  width: 500px;
+  height: 750px;
+  position: relative;
+}
+
+section div.info {
+  max-width: 480px;
+  padding: 32px;
+}
+
+section h2 {
+  font-size: 32px;
+}
+
+section p {
+  margin: 32px 0 0 0;
+}
+
+section a {
+  background-color: #fff;
+  text-decoration: none;
+  color: #111;
+  font-size: 16px;
+  padding: 8px 24px;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+}
+
+section a img {
+  margin-left: 8px;
+  width: 10px;
+  height: 16px;
+  object-fit: cover;
+  object-position: center right;
+  transition: width 200ms;
+}
+
+section a:hover img {
+  width: 20px;
+}
+
+section div.slides img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 500px;
+  height: 750px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, .25)
+}
+
+section.alternative div.split:first-child {
+  grid-column: 2;
+}
+
+section.alternative div.split:last-child {
+  grid-column: 1;
+}
+
+@media (max-width: 1080px) {
+  section {
+    display: block;
+  }
+
+  section.div.split {
+    padding: 64px 0 64px 0;
+  }
+}
+
+@media (max-width: 700px) {
+  section div.slides, section div.slides img {
+    width: 80vw;
+    height: 120vw;
+  }
+}
